@@ -24,7 +24,6 @@ body {
     overflow: hidden;
 }
 
-/* Floating hearts background */
 .heart-bg span {
     position: absolute;
     bottom: -50px;
@@ -85,9 +84,10 @@ button {
     font-size: 16px;
     border-radius: 30px;
     cursor: pointer;
-    margin-top: 20px;
+    margin: 10px;
     box-shadow: 0 10px 25px rgba(255,77,109,0.5);
     transition: 0.3s;
+    position: relative;
 }
 
 button:hover {
@@ -117,7 +117,6 @@ button:hover {
 
 <body>
 
-<!-- Floating hearts -->
 <div class="heart-bg">
     <span style="left:10%; animation-delay:0s;">❤️</span>
     <span style="left:25%; animation-delay:2s;">💖</span>
@@ -133,26 +132,24 @@ button:hover {
 
     <div class="big-heart">❤️</div>
 
-    <button onclick="showMessage()">Tap for your surprise 💌</button>
-
-    <div class="hidden-message" id="message">
-        <p>
-            You are not special just today,<br>
-            you are special every single day 💕<br><br>
-            Thank you for being my smile,<br>
-            my peace, my everything 🌸<br><br>
-            Forever & Always ❤️
-        </p>
-
-        <div class="signature">
-            — From someone who loves you 💫
-        </div>
-    </div>
+    <button onclick="openSpecialMessage()">Yes 💌</button>
+    <button id="noBtn">No ❌</button>
 </div>
 
 <script>
-function showMessage() {
-    document.getElementById("message").style.display = "block";
+// Make NO button move randomly
+const noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.position = "absolute";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+
+// Open special message page on YES click
+function openSpecialMessage() {
+    window.location.href = "special.html"; // <-- Create this page
 }
 </script>
 

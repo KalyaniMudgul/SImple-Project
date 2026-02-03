@@ -1,1 +1,137 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Special Valentine ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Floating hearts */
+.heart-bg span {
+    position: absolute;
+    bottom: -50px;
+    font-size: 20px;
+    animation: float 8s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) scale(0.5); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-110vh) scale(1.2); opacity: 0; }
+}
+
+.card {
+    background: rgba(255,255,255,0.95);
+    padding: 35px;
+    border-radius: 25px;
+    text-align: center;
+    width: 360px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    animation: pop 1s ease;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+    color: #ff4d6d;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.big-heart {
+    font-size: 70px;
+    margin: 15px 0;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+}
+
+.signature {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message-content {
+    animation: fadeIn 2s ease;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<div class="heart-bg">
+    <span style="left:10%; animation-delay:0s;">❤️</span>
+    <span style="left:25%; animation-delay:2s;">💖</span>
+    <span style="left:40%; animation-delay:4s;">💕</span>
+    <span style="left:55%; animation-delay:1s;">❤️</span>
+    <span style="left:70%; animation-delay:3s;">💗</span>
+    <span style="left:85%; animation-delay:5s;">💞</span>
+</div>
+
+<div class="card message-content">
+    <h1>Surprise! 💌</h1>
+    <div class="big-heart">❤️</div>
+    <p>
+        You are my sunshine every single day 🌸<br>
+        My laughter, my peace, my love 💕<br><br>
+        Thank you for being you, <br>
+        Forever & Always ❤️
+    </p>
+    <div class="signature">— From someone who adores you 💫</div>
+</div>
+
+<!-- Background Music -->
+<audio id="specialMusic" src="your-music.mp3" autoplay loop></audio> <!-- Replace 'your-music.mp3' -->
+
+<script>
+// Optional: ensure music plays when page loads (some browsers require user interaction)
+window.addEventListener('load', () => {
+    const music = document.getElementById("specialMusic");
+    music.play().catch(() => {
+        console.log("Music will play after user interaction if blocked by browser.");
+    });
+});
+</script>
+
+</body>
+</html>
